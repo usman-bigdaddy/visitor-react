@@ -11,7 +11,7 @@ const Invites = () => {
           <table
             class="table table-bordered"
             id="dataTable"
-            width="100%"
+            width="50%"
             cellspacing="0"
           >
             <thead>
