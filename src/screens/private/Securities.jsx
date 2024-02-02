@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { getSecurities } from "../../lib/api";
 const Securities = () => {
   const [users, setUsers] = useState(null);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,21 +32,24 @@ const Securities = () => {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone</th>
-                <th>Occupation</th>
-                <th>House Number</th>
+                <th>Gender</th>
+                <th>On Duty</th>
               </tr>
             </thead>
             {users && users.length > 0 ? (
               <tbody>
-                {users.map((user) => (
-                  <tr key={user._id}>
+                {users.map((item) => (
+                  <tr key={item._id}>
                     <td>
-                      {user.firstname} {user.lastname}
+                      {item.user.firstname} {item.user.lastname}
                     </td>
-                    <td>{user.email}</td>
-                    <td>{user.phone.mobile}</td>
-                    <td>{user.occupation}</td>
-                    <td>{user.housenumber}</td>
+                    <td>{item.user.email}</td>
+                    <td>{item.user.phone.mobile}</td>
+                    <td>{item.user.gender}</td>
+                    <td>{item.gender}</td>
+                    <td>
+                      <input type="checkbox" checked={item.onDuty} />
+                    </td>
                     {/* Add more table data as needed */}
                   </tr>
                 ))}

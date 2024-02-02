@@ -39,15 +39,15 @@ const Owners = () => {
             </thead>
             {users && users.length > 0 ? (
               <tbody>
-                {users.map((user) => (
-                  <tr key={user._id}>
+                {users.map((item) => (
+                  <tr key={item._id}>
                     <td>
-                      {user.firstname} {user.lastname}
+                      {item.user.firstname} {item.user.lastname}
                     </td>
-                    <td>{user.email}</td>
-                    <td>{user.phone.mobile}</td>
-                    <td>{user.occupation}</td>
-                    <td>{user.housenumber}</td>
+                    <td>{item.user.email}</td>
+                    <td>{item.user.phone.mobile}</td>
+                    <td>{item.user.occupation}</td>
+                    <td>{item.housenumber}</td>
                     {/* Add more table data as needed */}
                   </tr>
                 ))}
