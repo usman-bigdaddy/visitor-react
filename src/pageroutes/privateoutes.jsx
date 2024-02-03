@@ -4,6 +4,7 @@ import Securities from "../screens/private/Securities";
 import Owners from "../screens/private/Owners";
 import AddResident from "../screens/private/AddResident";
 import AddSecurities from "../screens/private/AddSecurities";
+import Dashboard from "../screens/private/Dashboard";
 
 export default function PrivateRoutes() {
   return (
@@ -347,6 +348,7 @@ export default function PrivateRoutes() {
                 <Route path="/residents/add" element={<AddResident />} />
                 <Route path="/securities" element={<Securities />} />
                 <Route path="/securities/add" element={<AddSecurities />} />
+                <Route path="/dashboard" element={<Dashboard />} />
               </Routes>
             </h1>
           </div>

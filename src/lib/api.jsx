@@ -7,8 +7,6 @@ export const createUser = async (formData) => {
       `${API_URL}/api/v1/users/register`,
       formData
     );
-
-    console.log(response.data);
   } catch (error) {
     console.error("Failed to fetch current user:", error);
   }
@@ -29,5 +27,26 @@ export const getSecurities = async () => {
     return data;
   } catch (error) {
     console.error("Failed to fetch current user:", error);
+  }
+};
+
+export const updateSecurityStatus = async (user, onDuty) => {
+  try {
+    const response = await axios.post(
+      `${API_URL}/api/v1/users/updatesecuritystatus`,
+      { user, onDuty }
+    );
+    return response;
+  } catch (error) {
+    console.error("Failed to update current secuirty:", error);
+  }
+};
+
+export const getDashbaord = async (user, onDuty) => {
+  try {
+    const response = await axios.get(`${API_URL}/api/v1/dash/`);
+    return response;
+  } catch (error) {
+    console.error("Failed to update current secuirty:", error);
   }
 };
