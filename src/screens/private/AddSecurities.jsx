@@ -4,6 +4,7 @@ import { createUser } from "../../lib/api";
 
 const AddSecurities = () => {
   const [loading, setLoading] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -49,6 +50,10 @@ const AddSecurities = () => {
     try {
       setLoading(true); // Set loading to true when submitting
       const res = await createUser(formData);
+      setShowAlert(true);
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 3000);
     } catch (error) {
     } finally {
       setLoading(false);
@@ -218,6 +223,23 @@ const AddSecurities = () => {
                     placeholder="Enter NIN"
                     className="form-control"
                   />
+                </div>
+                <div>
+                  {showAlert && (
+                    <div
+                      className="alert alert-success alert-dismissible fade show"
+                      role="alert"
+                    >
+                      Added Sucesfully!
+                      <button
+                        type="button"
+                        className="close"
+                        onClick={() => setShowAlert(false)}
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  )}
                 </div>
                 <div className="form-group pt-2">
                   <button
