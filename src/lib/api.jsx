@@ -20,6 +20,14 @@ export const getResidents = async () => {
     console.error("Failed to fetch current user:", error);
   }
 };
+export const getInvites = async () => {
+  try {
+    const { data } = await axios.get(`${API_URL}/api/v1/invites`);
+    return data;
+  } catch (error) {
+    console.error("Failed to fetch current user:", error);
+  }
+};
 
 export const getSecurities = async () => {
   try {

@@ -5,6 +5,7 @@ import Owners from "../screens/private/Owners";
 import AddResident from "../screens/private/AddResident";
 import AddSecurities from "../screens/private/AddSecurities";
 import Dashboard from "../screens/private/Dashboard";
+import Invites from "../screens/private/Invites";
 
 export default function PrivateRoutes() {
   return (
@@ -29,6 +30,12 @@ export default function PrivateRoutes() {
           <Link class="nav-link" to="/dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
+          </Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link" to="/invites">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Invites</span>
           </Link>
         </li>
         <li class="nav-item">
@@ -343,7 +350,7 @@ export default function PrivateRoutes() {
             <h1 class="h3 mb-4 text-gray-800">
               <Routes>
                 <Route index element={<Owners />} />
-                <Route path="/invites" element={<Securities />} />
+                <Route path="/invites" element={<Invites />} />
                 <Route path="/residents" element={<Owners />} />
                 <Route path="/residents/add" element={<AddResident />} />
                 <Route path="/securities" element={<Securities />} />
