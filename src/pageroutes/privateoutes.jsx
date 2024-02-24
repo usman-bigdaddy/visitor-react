@@ -6,6 +6,7 @@ import AddResident from "../screens/private/AddResident";
 import AddSecurities from "../screens/private/AddSecurities";
 import Dashboard from "../screens/private/Dashboard";
 import Invites from "../screens/private/Invites";
+import VerifyInvite from "../screens/private/VerifyInvite";
 
 export default function PrivateRoutes() {
   return (
@@ -38,6 +39,13 @@ export default function PrivateRoutes() {
             <span>Invites</span>
           </Link>
         </li>
+        <li class="nav-item">
+          <Link class="nav-link" to="/verifyinvite">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Verify Invites</span>
+          </Link>
+        </li>
+
         <li class="nav-item">
           <Link class="nav-link" to="/residents">
             <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -356,6 +364,7 @@ export default function PrivateRoutes() {
                 <Route path="/securities" element={<Securities />} />
                 <Route path="/securities/add" element={<AddSecurities />} />
                 <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/verifyinvite" element={<VerifyInvite />} />
               </Routes>
             </h1>
           </div>

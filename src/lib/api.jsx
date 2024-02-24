@@ -58,3 +58,25 @@ export const getDashbaord = async (user, onDuty) => {
     console.error("Failed to update current secuirty:", error);
   }
 };
+
+export const verifyInvite = async (code) => {
+  try {
+    const response = await axios.get(
+      `${API_URL}/api/v1/invites/verify/${code}`
+    );
+    return response;
+  } catch (error) {
+    console.error("Failed to update current secuirty:", error);
+  }
+};
+
+export const updateInvitationCode = async (code, status) => {
+  try {
+    const response = await axios.post(
+      `${API_URL}/api/v1/invites/${code}/${status}`
+    );
+    return response;
+  } catch (error) {
+    console.error("Failed to update current secuirty:", error);
+  }
+};
